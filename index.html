@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS PLAYER</title>
+
+  <link href="https://vjs.zencdn.net/8.23.4/video-js.css" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #070b18;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      padding: 22px;
+      text-align: center;
+      background: #10172b;
+      border-bottom: 1px solid #00eaff;
+      box-shadow: 0 0 20px #00d9ff33;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #00eaff;
+      letter-spacing: 5px;
+      text-shadow: 0 0 15px #00eaff;
+    }
+
+    header p {
+      color: #aab8d5;
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+
+    main {
+      width: 92%;
+      max-width: 950px;
+      margin: 35px auto;
+    }
+
+    .player-card {
+      padding: 15px;
+      background: #111a30;
+      border: 1px solid #00dfff;
+      border-radius: 15px;
+      box-shadow: 0 0 25px #00dfff22;
+    }
+
+    .video-js {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      height: auto;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .video-js .vjs-big-play-button {
+      border: 2px solid #00eaff;
+      background: #071528cc;
+      color: #00eaff;
+      border-radius: 50%;
+    }
+
+    .video-js .vjs-play-progress {
+      background: #00eaff;
+    }
+
+    .video-js .vjs-volume-level {
+      background: #00eaff;
+    }
+
+    .video-js .vjs-control-bar {
+      background: #081326;
+    }
+
+    .info {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .info h2 {
+      color: #00eaff;
+    }
+
+    .info p {
+      color: #aab8d5;
+    }
+
+    .status {
+      color: #00ff9d;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #71809f;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>NEXUS PLAYER</h1>
+    <p>THE FUTURE OF VIDEO</p>
+  </header>
+
+  <main>
+    <div class="player-card">
+
+      <video
+        id="nexus-video"
+        class="video-js vjs-big-play-centered"
+        controls
+        preload="metadata"
+        poster="https://vjs.zencdn.net/v/oceans.png"
+        playsinline>
+
+        <source
+          src="https://vjs.zencdn.net/v/oceans.mp4"
+          type="video/mp4">
+
+      </video>
+
+      <div class="info">
+        <div class="status">● SYSTEM ONLINE</div>
+        <h2>Welcome to NEXUS</h2>
+        <p>Your next-generation video experience starts here.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    NEXUS PLAYER © 2026 | POWERED BY VIDEO.JS
+  </footer>
+
+  <script src="https://vjs.zencdn.net/8.23.4/video.min.js"></script>
+
+  <script>
+    const player = videojs('nexus-video', {
+      fluid: true,
+      responsive: true,
+      playbackRates: [0.5, 1, 1.5, 2],
+      controlBar: {
+        volumePanel: {
+          inline: false
+        }
+      }
+    });
+
+    player.ready(function() {
+      console.log('NEXUS PLAYER is ready!');
+    });
+  </script>
+
+</body>
+</html>
